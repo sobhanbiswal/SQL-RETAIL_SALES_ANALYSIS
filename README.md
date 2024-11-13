@@ -3,10 +3,11 @@
 ## Project Overview
 
 **Project Title**: Retail Sales Analysis  
+**SQL Platform**: MSSQL SERVER
 
 ## Objectives
 
-1. **Set up a retail sales database**: Create and populate a retail sales database with the provided sales data.
+1. **Set up a retail sales database**: Create and populate a retail sales database with the provided data.
 2. **Data Cleaning**: Identify and remove records with missing or null values.
 3. **Exploratory Data Analysis (EDA)**: Perform basic exploratory data analysis to understand the dataset.
 4. **Business Analysis**: Use SQL to answer specific business questions and derive insights from the sales data.
@@ -15,7 +16,7 @@
 
 ### 1. Database Setup
 
-- **Database Creation**: The project starts by creating a database named `p1_retail_db`.
+- **Database Creation**: The project starts by creating a database named `sql_project_p1`.
 - **Table Creation**: A table named `retail_sales` is created to store the sales data. The table structure includes columns for transaction ID, sale date, sale time, customer ID, gender, age, product category, quantity sold, price per unit, cost of goods sold (COGS), and total sale amount.
 
 ```sql
@@ -40,14 +41,17 @@ CREATE TABLE retail_sales
 ### 2. DATA CLEANING AND EXPLORATION
 
 - **Record Count**: Determine the total number of records in the dataset.
-- **Customer Count**: Find out how many unique customers are in the dataset.
-- **Category Count**: Identify all unique product categories in the dataset.
-- **Null Value Check**: Check for any null values in the dataset and delete records with missing data.
-
-```sql
 SELECT COUNT(*) FROM retail_sales;
+
+- **Customer Count**: Find out how many unique customers are in the dataset.
 SELECT COUNT(DISTINCT customer_id) FROM retail_sales;
+
+- **Category Count**: Identify all unique product categories in the dataset.
 SELECT DISTINCT category FROM retail_sales;
+
+
+- **Null Value Check**: Check for any null values in the dataset and delete records with missing data.
+```sql
 
 SELECT * FROM retail_sales
 WHERE 
